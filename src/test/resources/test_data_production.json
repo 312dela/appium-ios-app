@@ -1,0 +1,25 @@
+{
+  "product": {
+    "product1": "Sauce Labs Bike Light",
+    "product2": "Sauce Labs Bolt T-Shirt"
+  },
+  "account": {
+    "activeUsername": "bob@example.com",
+    "lockedOutUsername": "alice@example.com",
+    "password": "10203040"
+  },
+  "address": {
+    "addressLine1": "Amber Street",
+    "addressLine2": "Central Regency",
+    "city": "Bekasi",
+    "state": "West Java",
+    "postalCode": "12345",
+    "country": "Indonesia"
+  },
+  "payment": {
+    "cardNumber": "325812657568789",
+    "cvv": "123",
+    "validCard": "0329",
+    "invalidCard": "0325"
+  }
+}

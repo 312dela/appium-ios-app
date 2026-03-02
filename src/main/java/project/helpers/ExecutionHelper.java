@@ -50,14 +50,15 @@ public class ExecutionHelper {
         page.getLoginPage().enterLoginForm(username, password);
     }
 
-    public void fillCheckoutDetails(String name) {
-        page.getCheckoutPage().enterCheckoutDetails(name, Loader.address().addressLine1(),
+    public void fillCheckoutDetails() {
+        page.getCheckoutPage().enterCheckoutDetails(Loader.account().name(), Loader.address().addressLine1(),
                 Loader.address().addressLine2(), Loader.address().city(), Loader.address().state(),
                 Loader.address().postalCode(), Loader.address().country());
     }
-    
+
     public void fillPaymentDetails(String expDate) {
-        page.getPaymentPage().enterPaymentDetails(Loader.account().activeUsername(), Loader.payment().cardNumber(), expDate, Loader.payment().cvv());
+        page.getPaymentPage().enterPaymentDetails(Loader.account().name(), Loader.payment().cardNumber(), expDate,
+                Loader.payment().cvv());
     }
 
     public List<String> getActualProductByName() {

@@ -64,7 +64,7 @@ public class OrderValidationTest extends BaseTest {
             getExecution().checkoutAndLogin(username, password);
 
             try {
-                getExecution().fillCheckoutDetails(username);
+                getExecution().fillCheckoutDetails();
             } catch (Exception e) {
                 throw new AssertionError(e);
             }
@@ -128,7 +128,7 @@ public class OrderValidationTest extends BaseTest {
 
             getExecution().addProductToCart(product1, product2);
             getExecution().checkoutAndLogin(active_username, password);
-            getExecution().fillCheckoutDetails(active_username);
+            getExecution().fillCheckoutDetails();
             getExecution().fillPaymentDetails(expireCard);
 
             String actualMessage = paymentPage.getErrorInvalidValue();

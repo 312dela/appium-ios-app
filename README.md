@@ -159,7 +159,7 @@ Decouple test logic from configuration (`config.properties`) and test data (`tes
 
     // Helper Layer: ExecutionHelper.java
     public void fillPaymentDetails(String expDate) {
-        page.getPaymentPage().enterPaymentDetails(Loader.account().activeUsername(), Loader.payment().cardNumber(), expDate, Loader.payment().cvv());
+        page.getPaymentPage().enterPaymentDetails(Loader.account().name(), Loader.payment().cardNumber(), expDate, Loader.payment().cvv());
     }
 
     // Page Object Layer: RegistrationPage.java
@@ -179,6 +179,7 @@ Decouple test logic from configuration (`config.properties`) and test data (`tes
 - `@BeforeEach` / `@AfterEach` to be executed in each test method. 
 - `@RegisterExtension` to register a custom JUnit extension (`ScreenshotOnFailureExtension`) which captures a screenshot automatically when a test fails.
 ```java
+// Usage example
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public abstract class BaseTest {
  @RegisterExtension
@@ -213,6 +214,8 @@ public abstract class BaseTest {
         }
     }
 }    
+
+// For complete implementation details: BaseTest.java 
 ```
 **Test and Reporting**
 - `@Tag` to mark tests or classes with labels (e.g., "regression", "smoke", "order-flow").
@@ -220,6 +223,7 @@ public abstract class BaseTest {
 - `@Nested` to create hierarchical test structures, grouping related test cases within an outer class.
 - `@ParameterizedTest` + `@MethodSource` to enable efficient testing of multiple input variants with identical logic.
 ```java
+// Usage example
 @Tag("order-flow")
 @DisplayName("Order Validation Test")
 public class OrderValidationTest extends BaseTest {
@@ -245,6 +249,8 @@ public class OrderValidationTest extends BaseTest {
         }
     }
 }     
+
+// For complete implementation details: OrderValidationTest.java 
 ```
 
 ### 4. Retry Mechanism
@@ -488,7 +494,7 @@ mvn clean test \
   -Denvironment=qa
 ```
 
-> **Note:** NPM wrapper scripts are available in `package.json` for convenience.
+> **Note:** NPM wrapper scripts are available in `package.json` for convenience. Before using them, edit the file to replace with your own device identifiers.
 
 #### 5. Allure Report
 ```bash
@@ -520,7 +526,7 @@ Test settings and test data are managed through external files located in `src/t
 - **`test_data_{env}.json`**
 
 
-  Environment-specific data variations (e.g., different product names for each environment) are already implemented in this project and stored in JSON files corresponding to each environment (e.g., `test_data_qa.json`, `test_data_production.json`). The file for being used as the test data source will be resolved automatically based on the environment being targeted.
+  Environment-specific data variations (e.g., different product names for each environment) are already prepared in this project and stored in JSON files corresponding to each environment (e.g., `test_data_qa.json`, `test_data_production.json`). The file for being used as the test data source will be resolved automatically based on the environment being targeted.
 
 ### System Properties Reference
 

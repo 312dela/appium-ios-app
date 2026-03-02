@@ -6,6 +6,7 @@
   "account": {
     "activeUsername": "bob@example.com",
     "lockedOutUsername": "alice@example.com",
+    "name": "Taylor Labs P",
     "password": "10203040"
   },
   "address": {

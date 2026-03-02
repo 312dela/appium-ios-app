@@ -1,7 +1,10 @@
 # Mobile App (iOS) Automation Testing for E-Commerce
 This project demonstrates mobile app (iOS) automation testing for e-commerce platform (using My Demo App by [Sauce Labs](https://github.com/saucelabs/my-demo-app-ios) as the application under test). It covers comprehensive test coverage through positive, negative, and edge cases. It supports parallel execution, retry mechanisms, flexible configuration (e.g., environment and corresponding test data sources), and CI/CD pipeline integration. 
+
 ![Animation: Quick Demo](docs/quick_demo.gif)
-_Quick demo._
+
+*Quick demo.*
+
 ## Table of Contents
 - [Features](https://github.com/312dela/appium-ios-app#features)
 - [Technology Stack](https://github.com/312dela/appium-ios-app#technology-stack)
@@ -353,8 +356,11 @@ When multiple test classes run simultaneously on separate threads, shared object
 | `ExecutionHelper` | `ThreadLocal<ExecutionHelper> executionHelperTL` | Stores thread-specific instances of `ExecutionHelper` |
 | `AssertionManager` | `ThreadLocal<AssertionManager> assertionManagerTL` | Stores thread-specific instances of `AssertionManager` |
 
+
 ![Screenshot: Parallel Execution](docs/parallel_execution.png)
+
 _Running two test classes in parallel._
+
 ```text
 JUnit 5 (mode.classes.default=concurrent, parallelism=2)
         |
@@ -399,14 +405,16 @@ Continuous Integration and Continuous Deployment (CI/CD) are facilitated to ensu
 
 
 ![Animation: CI/CD Integration](docs/ci_cd_integration.gif)
-_CI/CD demo._
+
+*CI/CD demo.*
 
 ### 7. Allure Report for Reporting
 
 Using Allure Report for traceability and debugging efficiency which includes test result status, retry attempts and final outcome after retry exhaustion, detailed logging, and screenshots on failures linked inline within the report.
 
-![Animation: Test Report](docs/test_report.png)
-_Test execution result._
+![Animation: Test Report](docs/test_report.gif)
+
+*Test execution result.*
 
 ## Project Structure
 
